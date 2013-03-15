@@ -17,10 +17,11 @@ class Event < ActiveRecord::Base
   attr_accessible :city, :latitude, :longitude, :state, :street, :zip
 
   geocoded_by :address   # can also be an IP address
-  after_validation :geocode
+  # after_validation :geocode
+  after_validation :geocode, :if => :street_changed?
 
   def address
-  	[street, city, state, zip].compact.join(', ')
+  	[street].compact.join(', ')
   end
 
 end
