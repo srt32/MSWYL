@@ -28,9 +28,6 @@ TMS1::Application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for heroku
 
-  # from http://stackoverflow.com/questions/10792598/heroku-ruby-on-rails-error-image-not-precompiling
-  config.assets.initialize_on_precompile = false
-
   # from: http://stackoverflow.com/questions/8052865/rails-3-1-asset-pipeline-why-my-images-do-not-precompile-for-production
   config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif] 
 
