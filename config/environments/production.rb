@@ -26,7 +26,10 @@ TMS1::Application.configure do
   # Specifies the header that your server uses for sending files
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
-  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for heroku
+  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for heroku
+
+  # from: http://stackoverflow.com/questions/8052865/rails-3-1-asset-pipeline-why-my-images-do-not-precompile-for-production
+  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif] 
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
