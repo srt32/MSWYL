@@ -32,12 +32,12 @@
 
 <p>
   <b>Date:</b>
-  <%= @event.event_date.strftime("%A, %B %d, %Y") %>
+  <%= @event.event_date.strftime("%A, %B %d, %Y") rescue nil%>
 </p>
 
 <p>
   <b>Time:</b>
-  <%= @event.event_time.strftime("%I:%M%p") %>
+  <%= @event.event_time.strftime("%I:%M%p") rescue nil %>
 </p>
 
 <p>
