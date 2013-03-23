@@ -20,7 +20,8 @@ TMS1::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  config.assets.initialize_on_precompile = false # from Heroku docs, https://devcenter.heroku.com/articles/rails-asset-pipeline
+  # config.assets.initialize_on_precompile = false # from Heroku docs, https://devcenter.heroku.com/articles/rails-asset-pipeline
+  config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/ # http://stackoverflow.com/questions/8821864/config-assets-compile-true-in-rails-production-why-not
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
