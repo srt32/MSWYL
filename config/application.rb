@@ -55,7 +55,6 @@ module TMS1
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = true
 
-
     config.assets.initialize_on_precompile = false
     
     # Enable the asset pipeline
