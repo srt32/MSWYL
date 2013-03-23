@@ -33,7 +33,8 @@ module TMS1
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.assets.precompile += %w[*.css] 
+    # from http://blog.55minutes.com/2012/01/getting-compass-to-work-with-rails-31-and-32/
+    config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
