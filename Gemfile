@@ -10,6 +10,7 @@ gem 'geocoder'
 gem 'unicorn'
 gem 'foreman'
 gem 'devise'
+gem 'cancan'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

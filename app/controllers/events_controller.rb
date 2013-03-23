@@ -19,6 +19,7 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
+    authorize! :read, @event
 
     respond_to do |format|
       format.html # show.html.erb

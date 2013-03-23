@@ -20,7 +20,7 @@
 #
 
 class Event < ActiveRecord::Base
-  attr_accessible :city, :latitude, :longitude, :state, :street, :zip, :description,
+  attr_accessible :city, :state, :street, :zip, :description,
   					:host_name, :host_contact, :event_date, :event_time, :instructions
 
   geocoded_by :address   # can also be an IP address

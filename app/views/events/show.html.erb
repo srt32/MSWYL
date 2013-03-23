@@ -36,6 +36,21 @@
 </p>
 
 <p>
+  <b>How to Sign Up:</b>
+  <%= @event.instructions %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @event.event_date.strftime("%A, %B %d, %Y") %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @event.event_time.strftime("%I:%M%p") %>
+</p>
+
+<p>
   <b>Host Name:</b>
   <%= @event.host_name %>
 </p>
@@ -43,21 +58,6 @@
 <p>
   <b>Host Contact:</b>
   <%= @event.host_contact %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%= @event.event_date %>
-</p>
-
-<p>
-  <b>Time:</b>
-  <%= @event.event_time %>
-</p>
-
-<p>
-  <b>How to Sign Up:</b>
-  <%= @event.instructions %>
 </p>
 
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %>
