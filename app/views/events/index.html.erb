@@ -41,7 +41,11 @@
 
 <br />
 
-<%= link_to 'New Event', new_event_path %>
+<% if can? :create, @event %>
+  <%= link_to 'New Event', new_event_path %>
+<% end %>
+
+
 
 <!-- !FOR DEBUGGING!
 <%= @events_map_data %> -->
