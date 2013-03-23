@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<%= flash[:error] %>
 <head>
   <title>MSWYL</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -10,14 +11,14 @@
 
 <%= yield %>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
 
-<%= render 'layouts/footer' %>
+	<%= render 'layouts/footer' %>
 
-<ul class="hmenu">
-  <%= render 'devise/menu/login_items' %>  
-</ul>
+	<ul class="hmenu">
+  		<%= render 'devise/menu/login_items' %>  
+	</ul>
 
 </body>
 </html>
