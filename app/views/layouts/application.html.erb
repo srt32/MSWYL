@@ -5,12 +5,15 @@
   <title>MSWYL</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "gmaps4rails" %> 
+  			<!-- added for gmaps4rails - need to 
+  				confirm if precompiling is working -->
   <%= csrf_meta_tags %>
+  <%= yield :head %>
 </head>
 <body>
 
 <%= yield %>
-
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>
 
@@ -19,6 +22,6 @@
 	<ul class="hmenu">
   		<%= render 'devise/menu/login_items' %>  
 	</ul>
-
+<%= yield :scripts %> 
 </body>
 </html>

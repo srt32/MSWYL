@@ -5,8 +5,10 @@ class EventsController < ApplicationController
 
     if params[:search].present?
       @events = Event.near(params[:search], 50, :order => :distance)
+      @events_map_data = @events.to_gmaps4rails
     else
       @events = Event.all
+      @events_map_data = @events.to_gmaps4rails
     end
 
     respond_to do |format|

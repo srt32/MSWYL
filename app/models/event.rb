@@ -17,15 +17,21 @@
 #  event_date   :date
 #  event_time   :time
 #  instructions :text
+#  gmaps        :boolean          default(FALSE)
 #
 
 class Event < ActiveRecord::Base
   attr_accessible :city, :state, :street, :zip, :description,
   					:host_name, :host_contact, :event_date, :event_time, :instructions
 
-  geocoded_by :address   # can also be an IP address
-  # after_validation :geocode
+  geocoded_by :address
   after_validation :geocode, :if => :street_changed?
+
+  acts_as_gmappable
+
+  def gmaps4rails_address
+  	"#{self.address}"
+  end
 
   def address
   	[street].compact.join(', ')

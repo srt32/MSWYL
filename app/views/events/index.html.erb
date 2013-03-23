@@ -1,7 +1,7 @@
 <h1>Mountain School Where You Live (MSWYL)</h1>
 
 
-
+<%= gmaps4rails(@events_map_data) %>
 <h2>Find an event!</h2>
 
 <%= form_tag events_path, :method => :get do %>
@@ -10,7 +10,6 @@
     <%= submit_tag "Search Near", :name => nil %>
   </p>
 <% end %>
-
 
 <table>
   <tr>
@@ -43,3 +42,6 @@
 <br />
 
 <%= link_to 'New Event', new_event_path %>
+
+<!-- !FOR DEBUGGING!
+<%= @events_map_data %> -->

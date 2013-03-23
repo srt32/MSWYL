@@ -74,6 +74,7 @@ GEM
     foreman (0.62.0)
       thor (>= 0.13.6)
     geocoder (1.1.6)
+    gmaps4rails (1.5.6)
     growl (1.0.3)
     guard (1.6.2)
       listen (>= 0.6.0)
@@ -210,6 +211,7 @@ DEPENDENCIES
   faker (= 1.0.1)
   foreman
   geocoder
+  gmaps4rails
   growl (= 1.0.3)
   guard-rspec (= 0.5.5)
   guard-spork (= 0.3.2)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130322045047) do
+ActiveRecord::Schema.define(:version => 20130323173948) do
 
   create_table "events", :force => true do |t|
     t.text     "street"
@@ -20,14 +20,15 @@ ActiveRecord::Schema.define(:version => 20130322045047) do
     t.integer  "zip"
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.text     "description"
     t.string   "host_name"
     t.string   "host_contact"
     t.date     "event_date"
     t.time     "event_time"
     t.text     "instructions"
+    t.boolean  "gmaps",        :default => false
   end
 
   create_table "users", :force => true do |t|
