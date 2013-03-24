@@ -18,6 +18,7 @@ gem 'gmaps4rails'
 
 group :development do
   gem 'annotate', '2.5.0'
+  gem 'guard'
 end
 
 group :development, :test do
