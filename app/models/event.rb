@@ -17,7 +17,7 @@
 #  event_date   :date
 #  event_time   :time
 #  instructions :text
-#  gmaps        :boolean          default(FALSE)
+#  gmaps        :boolean          default(TRUE)
 #  event_name   :string(255)
 #  end_time     :time
 #
