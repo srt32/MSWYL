@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130323173948) do
+ActiveRecord::Schema.define(:version => 20130326023234) do
 
   create_table "events", :force => true do |t|
     t.text     "street"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20130323173948) do
     t.time     "event_time"
     t.text     "instructions"
     t.boolean  "gmaps",        :default => false
+    t.string   "event_name"
   end
 
   create_table "users", :force => true do |t|

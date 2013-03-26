@@ -18,6 +18,7 @@
 #  event_time   :time
 #  instructions :text
 #  gmaps        :boolean          default(FALSE)
+#  event_name   :string(255)
 #
 
 require 'test_helper'

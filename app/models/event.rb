@@ -18,11 +18,13 @@
 #  event_time   :time
 #  instructions :text
 #  gmaps        :boolean          default(FALSE)
+#  event_name   :string(255)
 #
 
 class Event < ActiveRecord::Base
   attr_accessible :city, :state, :street, :zip, :description,
-  					:host_name, :host_contact, :event_date, :event_time, :instructions
+  					:host_name, :host_contact, :event_date, :event_time,
+            :instructions, :event_name
 
   geocoded_by :address
   after_validation :geocode, :if => :street_changed?

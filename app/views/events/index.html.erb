@@ -21,10 +21,11 @@
 
 <table>
   <tr>
-    <th>Street</th>
-    <th>City</th>
+    <th>Location</th>
+    <th>Event Name</th>
+<!--     <th>City</th>
     <th>State</th>
-    <th>Zip</th>
+    <th>Zip</th> -->
     <th></th>
     <th></th>
     <th></th>
@@ -33,9 +34,10 @@
 <% @events.each do |event| %>
   <tr>
     <td><%= event.street %></td>
-    <td><%= event.city %></td>
+    <td><%= event.event_name %></td>
+<!--     <td><%= event.city %></td>
     <td><%= event.state %></td>
-    <td><%= event.zip %></td>
+    <td><%= event.zip %></td> -->
     <td><%= link_to 'See more details', event %></td>
     <% if can? :update, @event %>
       <td><%= link_to 'Edit', edit_event_path(event) %></td>
