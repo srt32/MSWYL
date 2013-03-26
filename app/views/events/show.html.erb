@@ -42,16 +42,7 @@
 
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %>
 
-<% if true %>
-<h3>Nearby locations</h3>
-<ul>
-<% for event in @event.nearbys(100) %>
-  <li><%= link_to event.address, event %> (<%= event.distance %> miles)</li>
-<% end %>
-</ul>
-<% end %>
-
 <% if can? :update, @event %>
-  <%= link_to 'Edit', edit_event_path(event) %>
+  <%= link_to 'Edit', edit_event_path(@event) %>
 <% end %>
 <%= link_to 'Back', events_path %>
