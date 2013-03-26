@@ -26,8 +26,13 @@
 </p>
 
 <p>
-  <b>Time:</b>
+  <b>Start Time:</b>
   <%= @event.event_time.strftime("%I:%M%p") rescue nil %>
+</p>
+
+<p>
+  <b>End Time:</b>
+  <%= @event.end_time.strftime("%I:%M%p") rescue nil %>
 </p>
 
 <p>

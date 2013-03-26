@@ -19,6 +19,7 @@
 #  instructions :text
 #  gmaps        :boolean          default(FALSE)
 #  event_name   :string(255)
+#  end_time     :time
 #
 
 require 'spec_helper'
