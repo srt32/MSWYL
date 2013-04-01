@@ -29,4 +29,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # will need to allow :admin for initial set up to create first admin account
   # attr_accessible :title, :body
+
+  has_many :signups
+  has_many :events, :through => :signups
 end
