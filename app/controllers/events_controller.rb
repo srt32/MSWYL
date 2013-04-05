@@ -2,10 +2,15 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-
     if params[:search].present?
       @events = Event.near(params[:search], 50, :order => :distance)
-      @events_map_data = @events.to_gmaps4rails
+      if @events.empty?
+        @events_map_data = Event.all.to_gmaps4rails
+        flash.now[:notice] = "Sorry! There is currently no event near that location.  Take a look at the map for some other events."
+      else
+        @events
+        @events_map_data = @events.to_gmaps4rails
+      end
     else
       @events = Event.all
       @events_map_data = @events.to_gmaps4rails
