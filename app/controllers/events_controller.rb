@@ -6,7 +6,9 @@ class EventsController < ApplicationController
       @events = Event.near(params[:search], 50, :order => :distance)
       if @events.empty?
         @events_map_data = Event.all.to_gmaps4rails
-        flash.now[:notice] = "Sorry! There is currently no event near that location.  Take a look at the map for some other events."
+        flash.now[:notice] = "Sorry! There is currently no event near that location. 
+                              Take a look at the map above for some other events, 
+                              or use your browser's back button to return to the home page."
       else
         @events
         @events_map_data = @events.to_gmaps4rails
