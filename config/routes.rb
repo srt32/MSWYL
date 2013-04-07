@@ -4,6 +4,9 @@ TMS1::Application.routes.draw do
     resources :attendees
   end
 
+  resources :attendees do
+  end
+
   root :to => 'events#index'
 
   devise_for :users

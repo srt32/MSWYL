@@ -25,6 +25,7 @@ class AttendeesController < ApplicationController
   # GET /attendees/new
   # GET /attendees/new.json
   def new
+    @event = current_event
     @attendee = Attendee.new
 
     respond_to do |format|
@@ -46,8 +47,10 @@ class AttendeesController < ApplicationController
 
     respond_to do |format|
       if @attendee.save
-        format.html { redirect_to @attendee, notice: 'Attendee was successfully created.' }
-        format.json { render json: @attendee, status: :created, location: @attendee }
+        format.html { redirect_to @event, notice: 
+              "Awesome!  You're signed up.  Expect to recieve an email from 
+                the event organizer in the next couple days. " }
+        format.json { render json: @event, status: :created, location: @attendee }
       else
         format.html { render action: "new" }
         format.json { render json: @attendee.errors, status: :unprocessable_entity }

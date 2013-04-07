@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @attendee %> |
-<%= link_to 'Back', attendees_path %>
+<%= link_to 'Back', event_attendees_path(@event, attendee) %>
