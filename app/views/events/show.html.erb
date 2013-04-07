@@ -16,11 +16,6 @@
 </p>
 
 <p>
-  <b>How to Sign Up:</b>
-  <%= @event.instructions.html_safe %>
-</p>
-
-<p>
   <b>Date:</b>
   <%= @event.event_date.strftime("%A, %B %d, %Y") rescue nil%>
 </p>
