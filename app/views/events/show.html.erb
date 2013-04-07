@@ -20,8 +20,6 @@
   <%= @event.instructions.html_safe %>
 </p>
 
-<%= link_to 'SIGN ME UP!', new_event_attendee_path(@event, @attendee) %>
-
 <p>
   <b>Date:</b>
   <%= @event.event_date.strftime("%A, %B %d, %Y") rescue nil%>
@@ -46,6 +44,10 @@
   <b>Host Contact:</b>
   <%= @event.host_contact %>
 </p>
+
+<h1>
+  <%= link_to 'Sign Me Up!', new_event_attendee_path(@event, @attendee) %>
+</h1>
 
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %>
 
