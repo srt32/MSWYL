@@ -4,6 +4,7 @@ class AttendeesController < ApplicationController
   def index
     @event = current_event
     @attendees = @event.attendees.all
+    authorize! :manage, @attendees
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +16,7 @@ class AttendeesController < ApplicationController
   # GET /attendees/1.json
   def show
     @attendee = Attendee.find(params[:id])
+    authorize! :manage, @attendee
 
     respond_to do |format|
       format.html # show.html.erb
@@ -37,6 +39,7 @@ class AttendeesController < ApplicationController
   # GET /attendees/1/edit
   def edit
     @attendee = Attendee.find(params[:id])
+    authorize! :manage, @attendee
   end
 
   # POST /attendees
@@ -62,6 +65,7 @@ class AttendeesController < ApplicationController
   # PUT /attendees/1.json
   def update
     @attendee = Attendee.find(params[:id])
+    authorize! :manage, @attendee
 
     respond_to do |format|
       if @attendee.update_attributes(params[:attendee])
@@ -79,6 +83,7 @@ class AttendeesController < ApplicationController
   def destroy
     @attendee = Attendee.find(params[:id])
     @attendee.destroy
+    authorize! :manage, @attendee
 
     respond_to do |format|
       format.html { redirect_to attendees_url }
