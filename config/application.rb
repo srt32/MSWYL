@@ -11,7 +11,7 @@ end
 
 module TMS1
   class Application < Rails::Application
-
+    config.autoload_paths << "#{config.root}/lib"
     if Rails.env == "production"
       config.middleware.use("Rack::GoogleAnalytics", :web_property_id => "UA-39546415-1")
     end

@@ -27,6 +27,8 @@ class Event < ActiveRecord::Base
   					:host_name, :host_contact, :event_date, :event_time,
             :instructions, :event_name, :end_time
 
+  has_many :attendees
+
   has_many :signups
   has_many :users, :through => :signups
 

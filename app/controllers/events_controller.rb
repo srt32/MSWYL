@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
+  include ControllerEvent
   def index
     if params[:search].present?
       @events = Event.near(params[:search], 50, :order => :distance)
