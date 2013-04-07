@@ -24,9 +24,6 @@
   <tr>
     <th>Event Name</th>
     <th>Location</th>
-<!--     <th>City</th>
-    <th>State</th>
-    <th>Zip</th> -->
     <th></th>
     <th></th>
     <th></th>
@@ -38,9 +35,6 @@
     <td>&nbsp</td>
     <td>&nbsp</td>
     <td><%= event.street %></td>
-<!--     <td><%= event.city %></td>
-    <td><%= event.state %></td>
-    <td><%= event.zip %></td> -->
     <td><%= link_to 'See more details', event %></td>
     <% if can? :update, @event %>
       <td><%= link_to 'Edit', edit_event_path(event) %></td>
@@ -52,13 +46,9 @@
 <% end %>
 </table>
 
-<br />
+<br/>
 
 <% if can? :create, @event %>
   <%= link_to 'New Event', new_event_path %>
 <% end %>
 
-
-
-<!-- !FOR DEBUGGING!
-<%= @events_map_data %> -->
