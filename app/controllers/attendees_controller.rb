@@ -64,12 +64,13 @@ class AttendeesController < ApplicationController
   # PUT /attendees/1
   # PUT /attendees/1.json
   def update
+    @event = current_event
     @attendee = Attendee.find(params[:id])
     authorize! :manage, @attendee
 
     respond_to do |format|
       if @attendee.update_attributes(params[:attendee])
-        format.html { redirect_to @attendee, notice: 'Attendee was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Attendee was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
