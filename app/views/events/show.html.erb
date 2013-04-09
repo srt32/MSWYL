@@ -42,7 +42,7 @@
   <%= @event.host_contact %>
 </p>
 
-<%= button_to "Sign Me Up!", new_event_attendee_path(@event, @attendee), :id => "open-contacts-dialog-btn", :class => "inbox-sf-add-btn tip", :method => :get, :style => "background:green" %>
+<%= button_to "Sign Me Up!", new_event_attendee_path(@event, @attendee), :id => "open-contacts-dialog-btn", :class => "inbox-sf-add-btn tip", :method => :get, :style => "background:lightgreen" %>
 
 <p>
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %>
