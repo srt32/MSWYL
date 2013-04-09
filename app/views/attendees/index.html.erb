@@ -1,6 +1,7 @@
 <h1>Listing attendees for <%= @event.event_name.html_safe %></h1>
 
-Attendee Count: <%= @attendees.count %>
+Attendee Count (including guests): <%= @event.attendees.count + 
+                      Attendee.where(:event_id => current_event.id).sum("num_guests") %>
 
 <table>
   <tr>
