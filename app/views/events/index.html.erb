@@ -10,7 +10,7 @@
 
 </h3>
 
-<h2>Find an event!</h2>
+<h2>Find an event! &nbsp&nbsp&nbsp Please RSVP by Friday, April 26th</h2>
 
 <%= form_tag events_path, :method => :get do %>
   <p>
@@ -38,9 +38,10 @@
     <td><%= link_to 'See more details', event %></td>
     <% if can? :update, @event %>
       <td><%= link_to 'Edit', edit_event_path(event) %></td>
+      <td><%= link_to 'See Attendee List', event_attendees_path(event) %></td>
     <% end %>
     <% if can? :destroy, @event %>
-      <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td>&nbsp<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
   </tr>
 <% end %>

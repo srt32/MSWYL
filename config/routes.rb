@@ -1,9 +1,19 @@
 TMS1::Application.routes.draw do
-  devise_for :users
+  
+  resources :events do
+    resources :attendees
+  end
 
-  resources :events
+  resources :attendees do
+  end
 
   root :to => 'events#index'
+
+  devise_for :users
+
+
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

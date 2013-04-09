@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Event:</b>
+  <%= @attendee.event_id %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @attendee.email %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @attendee.name %>
+</p>
+
+<p>
+  <b>Semester:</b>
+  <%= @attendee.semester %>
+</p>
+
+<p>
+  <b>Num guests:</b>
+  <%= @attendee.num_guests %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_attendee_path(@attendee) %> |
+<%= link_to 'Back', event_attendees_path %>
