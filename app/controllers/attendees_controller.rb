@@ -52,7 +52,7 @@ class AttendeesController < ApplicationController
       if @attendee.save
         format.html { redirect_to @event, notice: 
               "Awesome!  You're signed up.  Expect to receive an email from 
-                the event organizer in the next couple days. " }
+                the event organizer in the next couple of days. " }
         format.json { render json: @event, status: :created, location: @attendee }
       else
         format.html { render action: "new" }
