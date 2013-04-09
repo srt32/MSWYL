@@ -35,6 +35,6 @@
     <%= f.number_field :num_guests %>
   </div>
   <div class="actions">
-    <%= f.submit "RSVP Now" %>
+    <%= button_to "RSVP Now", new_event_attendee_path(f), :id => "open-contacts-dialog-btn", :class => "inbox-sf-add-btn tip", :method => :post, :style => "background:lightgreen" %>
   </div>
 <% end %>
