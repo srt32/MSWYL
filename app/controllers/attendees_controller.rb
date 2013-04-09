@@ -87,7 +87,7 @@ class AttendeesController < ApplicationController
     authorize! :manage, @attendee
 
     respond_to do |format|
-      format.html { redirect_to attendees_url }
+      format.html { redirect_to event_attendees_path }
       format.json { head :no_content }
     end
   end
