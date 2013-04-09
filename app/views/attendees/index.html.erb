@@ -7,6 +7,7 @@ Attendee Count (including guests): <%= @event.attendees.count +
   <tr>
     <th>Email</th>
     <th>Name</th>
+    <th>Phone Number</th>
     <th>Semester</th>
     <th>Guests</th>
     <th></th>
@@ -18,6 +19,7 @@ Attendee Count (including guests): <%= @event.attendees.count +
   <tr>
     <td><%= attendee.email %></td>
     <td><%= attendee.name %></td>
+    <td><%= attendee.phone %></td>    
     <td><%= attendee.semester %></td>
     <td><%= attendee.num_guests %></td>
     <td><%= link_to 'Show', event_attendee_path(@event, attendee) %></td>

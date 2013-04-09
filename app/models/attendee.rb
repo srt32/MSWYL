@@ -1,5 +1,5 @@
 class Attendee < ActiveRecord::Base
-  attr_accessible :email, :event_id, :name, :num_guests, :semester
+  attr_accessible :email, :event_id, :name, :num_guests, :semester, :phone
 
   belongs_to :event
 
