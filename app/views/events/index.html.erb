@@ -16,7 +16,9 @@
   </p>
 </h4>
 
-<!--   <h2>Total RSVP's: </h2><%= total_rsvps %> -->
+<% if can? :create, @event %>
+  <h2>[Admin Only] -- Total RSVP's: <%= total_rsvps %></h2>
+<% end %>
 
 <h2>Find an event! &nbsp&nbsp&nbsp Please RSVP by Friday, April 26th</h2>
 
