@@ -10,6 +10,7 @@ Attendee Count (including guests): <%= @event.attendees.count +
     <th>Phone Number</th>
     <th>Semester</th>
     <th>Guests</th>
+    <th>Create Time</th>
     <th></th>
     <th></th>
     <th></th>
@@ -22,12 +23,30 @@ Attendee Count (including guests): <%= @event.attendees.count +
     <td><%= attendee.phone %></td>    
     <td><%= attendee.semester %></td>
     <td><%= attendee.num_guests %></td>
+    <td><%= attendee.created_at.strftime("%B %d, %Y") rescue nil %></td>
     <td><%= link_to 'Show', event_attendee_path(@event, attendee) %></td>
     <td><%= link_to 'Edit', edit_event_attendee_path(@event, attendee) %></td>
     <td><%= link_to 'Destroy', event_attendee_path(@event, attendee), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
+
+<br />
+
+<!-- Table added to make admin reporting easier -->
+<h2>Use this lower table to copy and paste emails</h2>
+<table>
+  <tr>
+    <th>Email</th>
+  </tr>
+
+  <% @attendees.each do |attendee| %>
+  <tr>
+    <td><%= attendee.email%></td>
+  </tr>
+  <% end %>
+</table>
+
 
 <br />
 
