@@ -37,11 +37,6 @@
   <%= @event.host_name %>
 </p>
 
-<p>
-  <b>Host Contact:</b>
-  <%= @event.host_contact %>
-</p>
-
 <%= button_to "Sign Me Up!", new_event_attendee_path(@event, @attendee), :id => "open-contacts-dialog-btn", :class => "inbox-sf-add-btn tip", :method => :get, :style => "background:lightgreen" %>
 
 <p>
