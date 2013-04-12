@@ -35,6 +35,9 @@
 
 <table cellspacing="0">
   <tr>
+    <% if can? :create, @event %>
+        <th>RSVP Count</th>
+    <% end %>
     <th>Event Name</th>
     <th>Location</th>
     <th></th>
@@ -44,6 +47,9 @@
 
 <% @events.each do |event| %>
   <tr>
+    <% if can? :create, @event %>
+      <td><%= event.attendees.count %></td>
+    <% end %>    
     <td><%= event.event_name %></td>
     <td>&nbsp</td>
     <td>&nbsp</td>
