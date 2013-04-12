@@ -48,7 +48,7 @@
 <% @events.each do |event| %>
   <tr>
     <% if can? :create, @event %>
-      <td><%= event.attendees.count %></td>
+      <td><%= event.attendees.count + Attendee.where(:event_id => event.id).sum("num_guests") %></td>
     <% end %>    
     <td><%= event.event_name %></td>
     <td>&nbsp</td>
