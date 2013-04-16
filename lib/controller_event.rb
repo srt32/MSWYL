@@ -17,6 +17,10 @@ module ControllerEvent
   end
 
   def last_rsvp_date(event)
-  	Attendee.where(:event_id => event.id).order("created_at DESC").first.created_at.strftime("%B %d") rescue nil
+  	if Attendee.where(:event_id => event.id).empty?
+      "No RSVP's"
+    else
+      Attendee.where(:event_id => event.id).order("created_at DESC").first.created_at.strftime("%B %d") rescue nil
+    end
   end
 end
