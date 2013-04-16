@@ -17,7 +17,7 @@ gem 'gmaps4rails'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
-  gem 'annotate', '2.5.0'
+  gem 'annotate'
   gem 'guard'
 end
 

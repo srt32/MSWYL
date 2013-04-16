@@ -37,6 +37,7 @@
   <tr>
     <% if can? :create, @event %>
         <th>RSVP Count</th>
+        <th>Last RSVP</th>
     <% end %>
     <th>Event Name</th>
     <th>Location</th>
@@ -49,6 +50,7 @@
   <tr>
     <% if can? :create, @event %>
       <td><%= event.attendees.count + Attendee.where(:event_id => event.id).sum("num_guests") %></td>
+      <td><%= last_rsvp_date(event) %>
     <% end %>    
     <td><%= event.event_name %></td>
     <td>&nbsp</td>
