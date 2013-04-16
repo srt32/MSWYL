@@ -1,7 +1,7 @@
 module ControllerEvent
   def self.included(controller)
     controller.send :helper_method, :current_event, :total_rsvps,
-    					:last_rsvp_date
+    					:last_rsvp_date, :total_rsvps_event
   end
 
   def current_event
@@ -10,6 +10,10 @@ module ControllerEvent
 
   def total_rsvps
   	Attendee.all.count + Attendee.sum("num_guests")
+  end
+
+  def total_rsvps_event(event)
+    event.attendees.count + Attendee.where(:event_id => event.id).sum("num_guests")
   end
 
   def last_rsvp_date(event)
