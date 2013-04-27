@@ -25,6 +25,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def summary
+    @events = Event.all
+    authorize! :update, @event
+  end
+
   # GET /events/1
   # GET /events/1.json
   def show

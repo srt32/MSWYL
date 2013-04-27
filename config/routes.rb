@@ -1,4 +1,6 @@
 TMS1::Application.routes.draw do
+
+  match '/events/summary', to: 'events#summary'
   
   resources :events do
     resources :attendees

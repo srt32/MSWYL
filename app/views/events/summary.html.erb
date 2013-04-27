@@ -1,0 +1,27 @@
+<h1> Summary of attendees by event (Admin only) </h1>
+
+<table cellspacing="0">
+  <tr>
+    <th>Location</th>
+    <th> &nbsp&nbsp&nbsp </th>
+    <th>Event</th>
+    <th> &nbsp&nbsp&nbsp </th>
+    <th>Date</th>
+    <th> &nbsp&nbsp&nbsp </th>
+    <th># Attending</th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>  
+    <td><%= event.street %></td>
+    <td>  </td>
+    <td><%= event.event_name %></td>
+    <td>  </td>
+    <td><%= event.event_date.strftime("%m/%d") rescue nil %></td>
+    <td>  </td>
+    <td><%= total_rsvps_event(event) %></td>
+  </tr>
+<% end %>
+</table>
+
+<h2> Total Attendees: <%= total_rsvps %> </h2> 

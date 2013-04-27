@@ -7,5 +7,10 @@
 		<%= link_to "Home",		root_path %>
 		 &nbsp&nbsp<a href="http://www.mountainschool.org/alumni" target="_blank">Find other alumni in the TMS Alumni Directory</a> 
 	</h2>
+
+	<% if can? :create, @event %>
+	  <h2>[Admin Only] -- <%= link_to "Events Summary", events_summary_path %></h2>
+	<% end %>
+
 	<%= image_tag("TMSLogo.png", :alt => "TMS Logo") %>
 </footer>
