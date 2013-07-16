@@ -37,6 +37,10 @@ class Event < ActiveRecord::Base
 
   acts_as_gmappable
 
+  def gmaps4rails_infowindow
+    "#{self.description}"
+  end
+
   def gmaps4rails_address
   	"#{self.address}"
   end
