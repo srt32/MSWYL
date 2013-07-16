@@ -9,15 +9,12 @@
   <%= yield :head %>
 </head>
 <body>
+  <%= render 'layouts/navbar' %>
 
-<%= yield %>
+  <%= yield %>
 	<p class="alert"><%= alert %></p>
 
 	<%= render 'layouts/footer' %>
-
-	<ul class="hmenu">
-  		<%= render 'devise/menu/login_items' %>  
-	</ul>
 <%= yield :scripts %>
 </body>
 
