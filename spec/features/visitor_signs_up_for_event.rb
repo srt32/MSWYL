@@ -1,14 +1,19 @@
 require 'spec_helper'
 
-feature 'Visitor signs up for event' do
-	scenario 'select an event' do
-    open_event
+describe 'Visitor signs up for event', :type => :feature do
+    before do
+      Event.create!(:event_name => "Eat mushrooms", :description => "delicious")
+      visit "/"
+    end
 
-    expect(page).to have_content('Event Name')
-	end
+  describe 'get /' do
+  	it "should display 'Eat mushrooms'" do
+	    page.should have_content("Eat mushrooms")
+		end
 
-	def open_event
-    visit root_path
-    click_button 'See more details'
-	end
+    it "should go to event#show page when user clicks on event" do
+      click_link 'See more details'
+      page.should have_content("Event Name: Eat mushrooms")
+    end
+  end
 end
