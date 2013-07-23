@@ -46,7 +46,7 @@ class AttendeesController < ApplicationController
   # POST /attendees.json
   def create
     @event = current_event
-    @attendee = @event.attendees.new(params[:attendee])
+    @attendee = @event.attendees.new(attendee_params)
 
     respond_to do |format|
       if @attendee.save
@@ -65,7 +65,7 @@ class AttendeesController < ApplicationController
   # PUT /attendees/1.json
   def update
     @event = current_event
-    @attendee = Attendee.find(params[:id])
+    @attendee = Attendee.find(attendee_params)
     authorize! :manage, @attendee
 
     respond_to do |format|
@@ -90,5 +90,12 @@ class AttendeesController < ApplicationController
       format.html { redirect_to event_attendees_path }
       format.json { head :no_content }
     end
+  end
+
+private
+
+  def attendee_params
+    params.require(:attendee).permit(:email, 
+         :event_id, :name, :num_guests, :semester, :phone)
   end
 end

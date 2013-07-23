@@ -15,7 +15,7 @@ gem 'gmaps4rails'
 
 
 # added for Rails4
-gem 'protected_attributes'
+# gem 'protected_attributes'
 
 group :development do
   gem 'annotate'

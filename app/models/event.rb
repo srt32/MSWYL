@@ -23,10 +23,6 @@
 #
 
 class Event < ActiveRecord::Base
-  attr_accessible :city, :state, :street, :zip, :description,
-  					:host_name, :host_contact, :event_date, :event_time,
-            :instructions, :event_name, :end_time
-
   has_many :attendees
 
   has_many :signups

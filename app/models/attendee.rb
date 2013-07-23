@@ -1,6 +1,4 @@
 class Attendee < ActiveRecord::Base
-  attr_accessible :email, :event_id, :name, :num_guests, :semester, :phone
-
   belongs_to :event
 
   validates_numericality_of :num_guests, :only_integer => true, 
