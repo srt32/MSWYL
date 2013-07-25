@@ -38,7 +38,7 @@ describe 'Visitor signs up for event', :type => :feature do
     describe "should show confirmation message after submitting the form" do
       it "should go to success message when form submitted" do
         click_link 'See more details'
-        click_button 'Sign Me Up!'s
+        click_button 'Sign Me Up!'
         fill_in 'Email', with: "simon@example.com"
         fill_in 'attendee_name', with: "Simon T"
         fill_in 'attendee_phone', with: "1234567890"

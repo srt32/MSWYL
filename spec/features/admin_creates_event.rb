@@ -4,7 +4,7 @@ describe 'admin creates an event', :type => :feature do
   before do
     User.create!(:email => "simon@example.com", :password => "foobar", 
                   :password_confirmation => "foobar",
-                   :admin => :true)
+                   :admin => true)
     visit "/"
   end
 
@@ -24,22 +24,29 @@ describe 'admin creates an event', :type => :feature do
   end  
 
   describe 'admin creates a new event' do
-  	pending it "should display 'SOMETHING'" do
-	   page.should have_content("SOMETHING")
+  	it "should display new event form" do
+	    click_link 'Admin'
+      fill_in 'Email', with: "simon@example.com"
+      fill_in 'Password', with: "foobar"
+      click_on "Sign in"
+
+      click_link 'New Event'
+      page.should have_content('New event')
 		end
 
-    pending it "click on NEW EVENT" do
-      click_link 'NEW EVENT'
-      page.should have_content("EVENT FORM")
-    end
-  end
+    it "should create a new event" do
+      click_link 'Admin'
+      fill_in 'Email', with: "simon@example.com"
+      fill_in 'Password', with: "foobar"
+      click_on "Sign in"
+      click_link 'New Event'
 
-  describe "submitting event form" do
-   pending ""
-    # fill out the form
-    # submit the form
-    # page should have success
-  
-    # homepage should have the new event listed
+      fill_in 'event_event_name', with: "rotten"
+      fill_in 'event_street', with: "NYC"
+      fill_in 'event_description', with: "tomatoes"
+
+      click_on 'Create Event'
+      page.should have_content('Event was successfully created.')
+    end
   end
 end
