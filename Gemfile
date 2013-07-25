@@ -13,6 +13,7 @@ gem 'foreman'
 gem 'devise'
 gem 'cancan'
 gem 'gmaps4rails'
+gem 'rails_12factor'
 
 # added for Rails4
 # gem 'protected_attributes'
