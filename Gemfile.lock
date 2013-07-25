@@ -231,7 +231,7 @@ DEPENDENCIES
   guard-rspec (= 3.0.2)
   guard-spork (= 1.5.1)
   jquery-rails (= 3.0.4)
-  pg (= 0.12.0)
+  pg
   rack-google_analytics
   rails (= 4.0.0)
   rails_12factor
