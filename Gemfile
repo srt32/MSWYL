@@ -47,7 +47,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.12.0'
+  gem 'pg'
   gem 'rack-google_analytics', :require => "rack/google_analytics"
 end
 
