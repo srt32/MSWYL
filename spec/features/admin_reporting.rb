@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'admin creates an event', :type => :feature do
+describe 'admin reporting', :type => :feature do
   before do
     User.create!(:email => "simon@example.com", :password => "foobar", 
                   :password_confirmation => "foobar",
@@ -12,9 +12,15 @@ describe 'admin creates an event', :type => :feature do
     click_on "Sign in"
   end
 
-  describe 'TEST' do
-    it "test" do
-      pending
+  describe 'summary pages' do
+    it "should have total rsvp content" do
+      visit "/"
+      page.should have_content("Total RSVP's")
     end
-  end  
+
+    it "should have summary of attendees" do
+      visit '/events/summary'
+      page.should have_content('Summary of attendees')
+    end
+  end 
 end
