@@ -27,11 +27,14 @@ Please join in and have a wonderful time!
 
 <h2>Find an event! &nbsp&nbsp&nbsp Please RSVP by Friday, April 25th</h2>
 
+
+<% if false %>
 <%= form_tag events_path, :method => :get do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search Near", :name => nil %>
   </p>
+<% end %>
 <% end %>
 
 <table cellspacing="0">
