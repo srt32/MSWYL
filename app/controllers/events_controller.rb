@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   include ControllerEvent
   def index
     if params[:search].present?
-      @events = Event.near(params[:search], 50, :order => :distance)
+      @events = Event.near(params[:search], 50)
       if @events.empty?
         @events_map_data = Event.all.to_gmaps4rails
         flash.now[:notice] = "Sorry! There is currently no event near that location. 
