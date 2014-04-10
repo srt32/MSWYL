@@ -78,7 +78,7 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.json
   def update
-    @event = Event.find(event_params)
+    @event = Event.find(params[:id])
     authorize! :update, @event
 
     respond_to do |format|
