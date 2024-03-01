@@ -35,7 +35,7 @@ gem 'coffee-rails', '4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'twitter-bootstrap-rails'
 
-gem 'jquery-rails', '3.0.4'
+gem 'jquery-rails', '3.1.5'
 
 group :test do
   gem 'capybara', '2.1.0'
